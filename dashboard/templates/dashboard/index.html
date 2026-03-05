@@ -5,11 +5,26 @@
 
   <div class="container mt-3">
     <div class="row justify-content-center">
-      <div class="col col-auto">
-        <img src="{% static 'img/rafa.gif' %}" alt="Foto de rafa saludando" width=150>
-      </div>
+      
+      {% for i in "123" %}
+        
+        <div class="col col-auto">
+          <img src="{% static 'img/rafa.gif' %}" alt="Foto de rafa saludando" width=150>
+        </div>
+
+      {% endfor %}
+        
     </div>
+    <form class="row justify-content-center">
+      <div class="col col-auto">
+        <input type="text" class="form-control my-3" placeholder="Ingresa tu nombre" name="name">
+      </div>
+      <div class="col col-auto">
+        <button class="btn btn-primary my-3">{{"Aventurate y arriesgate"|upper}}</button>
+      </div>
+    </form>
     <h1 class="text-center">{{"Hello world"|upper}}</h1>
+    <h2 class="text-center text-uppercase">Bienvenido {{name|default:"Anonimo"}}</h2>
     <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio commodi nemo, a delectus reiciendis possimus, architecto ipsam esse officia illum debitis asperiores minus voluptatibus quia laudantium ab repudiandae vitae dolores?</p>
   </div>
 
