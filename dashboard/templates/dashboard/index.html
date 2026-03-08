@@ -32,10 +32,11 @@
         </div>
       </form>
     </div>
-    <div class="container shadow shadow-md p-3 rounded bg-dark text-white">
+    <div class="container shadow shadow-md p-3 rounded bg-dark text-white d-flex flex-column justify-content-center">
       <h1 class="text-center">{{"Hello world"|upper}}</h1>
       <h2 class="text-center text-uppercase">{{ greeting }} {{ name|default:"Anonimo" }}</h2>
-      <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio commodi nemo, a delectus reiciendis possimus, architecto ipsam esse officia illum debitis asperiores minus voluptatibus quia laudantium ab repudiandae vitae dolores?</p>
+      <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio commodi nemo, a delectus reiciendis possimus, architecto ipsam esse officia illum debitis asperiores minus voluptatibus quia laudantium ab repudiandae vitae dolores?</p>            
+      <a href="{% url 'dashboard:greeting_create' %}" class="btn btn-secondary">Agregar Saludo</a>        
     </div>
   </div>
 

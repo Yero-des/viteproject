@@ -1,7 +1,9 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, CreateView
 from .models import Greeting
 from django.templatetags.static import static
+from django.contrib import messages
+from django.urls import reverse_lazy
 
 # Create your views here.
 class IndexTemplateView(TemplateView):
@@ -34,3 +36,13 @@ class IndexTemplateView(TemplateView):
         })
         return context
     
+
+class GreetingCreateView(CreateView):
+    model = Greeting
+    fields = ['image']
+    template_name = 'dashboard/greeting_create.html'
+    success_url = reverse_lazy('dashboard:index')
+    
+    def form_valid(self, form):
+        messages.success(self.request, "Imagen agregada correctamente")
+        return super().form_valid(form)
