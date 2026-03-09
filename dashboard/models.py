@@ -4,7 +4,7 @@ from django.templatetags.static import static
 # Create your models here.
 class Greeting(models.Model):
     # name = models.CharField(blank=True)
-    image = models.ImageField(upload_to='greetings', blank=True, null=True)
+    image = models.ImageField(upload_to='greetings')
     updated_at = models.DateTimeField(auto_now_add=True)
     
     @property

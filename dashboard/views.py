@@ -43,6 +43,10 @@ class GreetingCreateView(CreateView):
     template_name = 'dashboard/greeting_create.html'
     success_url = reverse_lazy('dashboard:index')
     
+    def form_invalid(self, form):        
+        messages.error(self.request, "Error al subir el archivo", 'error')
+        super().form_invalid(form)
+        
     def form_valid(self, form):
         messages.success(self.request, "Imagen agregada correctamente")
         return super().form_valid(form)

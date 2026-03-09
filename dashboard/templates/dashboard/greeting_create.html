@@ -6,7 +6,7 @@
   <div class="container justify-content-center d-flex gap-4 mt-5">
     <div class="container shadow shadow-md p-3 rounded">
       
-      <form method="post" enctype="multipart/form-data" class="d-flex flex-column justify-content-center">
+      <form id="formCreate" method="post" enctype="multipart/form-data" class="d-flex flex-column justify-content-center">
         {% csrf_token %}
         {{ form.as_p }}
         <button class="btn btn-primary">{{"Subir saludo"|upper}}</button>        
@@ -16,3 +16,9 @@
   </div>
 
 {% endblock content %}
+
+
+{% block custom_js %}
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="{% static 'js/alerts.js' %}"></script>
+{% endblock custom_js %}
