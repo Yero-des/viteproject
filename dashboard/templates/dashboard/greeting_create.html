@@ -9,7 +9,7 @@
       <form id="formCreate" method="post" enctype="multipart/form-data" class="d-flex flex-column justify-content-center">
         {% csrf_token %}
         {{ form.as_p }}
-        <button class="btn btn-primary">{{"Subir saludo"|upper}}</button>        
+        <button class="btn btn-primary text-uppercase">Subir saludo</button>        
       </form>
 
     </div>
@@ -19,6 +19,6 @@
 
 
 {% block custom_js %}
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>  {% comment %} static/js/alerts.js {% endcomment %}
   <script src="{% static 'js/alerts.js' %}"></script>
 {% endblock custom_js %}
